@@ -16,9 +16,25 @@ public class Grille_de_jeu {
 		
 		for(int i = 0; i<this.Ligne;i++) {
 			for (int j=0; j <this.Colonnes; j++) {
-				
+				grille[i][j] = 'V';
 			}
 		}
 		
 		}
+		// Methodes
+public void Afficher() {
+	
+	System.out.println();
+	for(int i = 0;i<this.Ligne;i++) {
+		for (int j = 0; j< this.Colonnes;j++) {
+			
+			System.out.print(" | " +  grille[i][j] );
+				
+		}
+		System.out.println();
 	}
+	
+}
+
+
+}
