@@ -1,8 +1,8 @@
 package Bataille_Navale;
 
-import bataille_navale.modele.grille.Grille_de_jeu;
-import bataille_navale.modele.grille.Grille_de_jeu_joueur;
-import bataille_navale.modele.grille.Grille_de_jeu_ordinateur;
+import Bataille_Navale.modele.grille.Grille_de_jeu;
+import Bataille_Navale.modele.grille.Grille_de_jeu_joueur;
+import Bataille_Navale.modele.grille.Grille_de_jeu_ordinateur;
 
 public class Main {
 
