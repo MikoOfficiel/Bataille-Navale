@@ -21,7 +21,7 @@ public class Grille_de_jeu {
 		}
 		
 		}
-		// Methodes
+		// Methodes test
 public void Afficher() {
 	
 	System.out.println();
