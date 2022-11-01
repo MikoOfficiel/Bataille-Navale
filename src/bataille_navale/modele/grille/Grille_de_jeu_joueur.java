@@ -1,4 +1,4 @@
-package Bataille_Navale;
+package bataille_navale.modele.grille;
 
 public class Grille_de_jeu_joueur extends Grille_de_jeu {
 

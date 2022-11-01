@@ -1,4 +1,4 @@
-package Bataille_Navale;
+package bataille_navale.modele.grille;
 
 public class Grille_de_jeu {
 
@@ -16,7 +16,7 @@ public class Grille_de_jeu {
 		
 		for(int i = 0; i<this.Ligne;i++) {
 			for (int j=0; j <this.Colonnes; j++) {
-				grille[i][j] = 'V';
+				grille[i][j] = '0';
 			}
 		}
 		
