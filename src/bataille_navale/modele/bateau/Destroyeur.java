@@ -1,4 +1,4 @@
-package bataille_navale.modele.bateau;
+package Bataille_Navale.modele.bateau;
 
 public class Destroyeur extends Bateau {
 
