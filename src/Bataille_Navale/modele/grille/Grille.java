@@ -38,9 +38,21 @@ public class Grille extends JComponent {
 		}
 //Contour de la grille
 		g2.setPaint(Color.BLACK);
-
 		g2.draw(new Rectangle2D.Double(CASE_DIM,CASE_DIM, 15*CASE_DIM, 15*CASE_DIM));
 
+		// Coordonnées sur le contour de la grille
+		int c;
+		
+		for(int i =0;i<15;i++) {
+			c = i+1; 
+			g2.drawString(c+" ", 2.0f / 3 * CASE_DIM, (i+1.5f)*CASE_DIM + 6);
+			
+		}
+		for(int j =0; j<15;j++) {
+			c = 'A' + j; //Code ASCII
+			g2.drawString("" + (char)c, (j + 1.5f) * CASE_DIM - 5,2.0f/3* CASE_DIM + 6);
+		}
+		
 		g2.dispose();
 	}
 }

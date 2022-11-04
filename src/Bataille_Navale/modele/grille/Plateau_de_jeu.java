@@ -41,7 +41,7 @@ public class Plateau_de_jeu extends JFrame {
 		//Grille
 
 		Grille gr = new Grille();
-		gr.setBounds(10,10,451,451);
+		gr.setBounds(50,30,451,451);
 		add(gr);
 		//Label de choix du bateau
 		JLabel bat = new JLabel("Bateau");
