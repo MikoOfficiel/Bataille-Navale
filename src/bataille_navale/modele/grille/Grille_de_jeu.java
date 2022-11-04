@@ -3,6 +3,8 @@ package Bataille_Navale.modele.grille;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.*;
 //import Bataille_Navale.modele.bateau.Bateau;
 
 public class Grille_de_jeu {
@@ -19,6 +21,9 @@ public class Grille_de_jeu {
 	private Grille_de_jeu fin_bateau;
 	private int nbTouches ;
 	private Grille_de_jeu [] partiesTouches;
+
+	//Création graphique
+	//JFrame Frame;
 
 	//Constructeur
 	public Grille_de_jeu(int Ligne, int Col){
@@ -119,10 +124,19 @@ public class Grille_de_jeu {
 	public void initialiserLaFenetre() {
 
 		Frame = new JFrame("BATAILLE NAVALE");
-		Frame.setSize(500, 500);
+		Frame.setSize(800, 600);
 		Frame.setBackground(Color.black);
 		Frame.setVisible(true);
 		Frame.setFocusable(true);
 
-	}
+		//Test
+
+		//lblCouleur.setFont(new Font(Font.SANS_SERIF, Font, Font.BOLD, 18));
+		//add(lblCouleur);
+		/*JLabel lblCouleurV = new JLabel("noir");
+		lblCouleurV.setBounds(675,50,200,25);
+		lblCouleurV.setFont(new Font(Font.SANS_SERIF, Font.PLAIN,14));
+		add(lblCouleurV);
+	*/
+		}
 }

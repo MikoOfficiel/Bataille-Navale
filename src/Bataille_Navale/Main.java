@@ -15,7 +15,7 @@ public class Main {
 		System.out.println("Grille joueur");
 		g1.Afficher();	
 		System.out.println("Grille ordinateur");
-		g2.Afficher();
+		g2.Afficher();	
 	}
 
 }
