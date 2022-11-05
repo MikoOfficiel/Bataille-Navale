@@ -18,46 +18,50 @@ public class Plateau_de_jeu extends JFrame {
 	public Plateau_de_jeu() {
 
 		setTitle("Bataille navale");
-		setSize(1000,1000);
+		setSize(1200,1200);
 		setVisible(true);
 		//setResizable(false);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		//Contenu
 
-//Bouton commencer
+//Label Bataille Naval
 		Container contentPane = this.getContentPane();
 		contentPane.setLayout(new FlowLayout());
-		Bouton = new JButton("Commencer");
-		contentPane.add(Bouton);
+		//Bouton = new JButton("Commencer");
+		//contentPane.add(Bouton);
 		lbl = new JLabel("Bataille Navale");
-		lbl.setBounds(500,100,200,100);
+		lbl.setBounds(600,0,200,100);
 		lbl.setFont(new Font(Font.SANS_SERIF,Font.BOLD,18));
-		//add(lbl);
+		add(lbl);
 
-		//setLayout(null);
+		setLayout(null);
 
 
 		//Grille
 
-		Grille gr = new Grille();
+		Grille gr = new Grille ();
 		gr.setBounds(50,30,451,451);
-		add(gr);
+		contentPane.add(gr);
+		
 		//Label de choix du bateau
 		JLabel bat = new JLabel("Bateau");
 		bat.setFont(new Font(Font.DIALOG,Font.ITALIC,10));
 		bat.setBounds(850,25,50,15);
 		add(bat);
+		
 		//Liste déroulante avec tous les bateaux
 		String[] bateaux = {"Croiseur","Cuirase","Destroyeur","SousMarin"};
 		JComboBox<String> b = new JComboBox<>(bateaux);
-		b.setBounds(830,40,70,30);
+		b.setBounds(830,50,100,30);
 		add(b);
+		
 		//Label de tir
 		JLabel Tir = new JLabel("TIR");
 		Tir.setFont(new Font(Font.DIALOG,Font.ITALIC,10));
-		Tir.setBounds(850,100,50,15);
+		Tir.setBounds(850,120,50,15);
 		add(Tir);
+
 		//Case coordonnées X
 		JTextField tfX = new JTextField();
 		tfX.setBounds(800,150,60,45);
