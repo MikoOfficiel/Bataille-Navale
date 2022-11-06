@@ -78,7 +78,7 @@ public class Grille_de_jeu {
 
 	public int coordonneesSelection() {
 
-		return 0;	
+		return 0;	//Jahne : Pourquoi return 0; ?
 	}
 
 
