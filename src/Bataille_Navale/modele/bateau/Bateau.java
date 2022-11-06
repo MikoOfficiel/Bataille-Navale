@@ -60,7 +60,7 @@ public abstract class Bateau {
 		int i = 0 ;
 		int orientation = (int)(Math.random() * (2) + 1) ; //attribue une valeur aléatoire à orientation entre 0 et 2
 		int x = (int)(Math.random() * (10) + 1) ; //attribue une valeur aléatoire à x entre 0 et 10 
-		int y = (int)(Math.random() * (10) + 1) ; // le +1 permet d'ahouter la valeur exclue de MathRandom()
+		int y = (int)(Math.random() * (10) + 1) ; // le +1 permet d'ajouter la valeur exclue de MathRandom() [0:0,99]
 		
 		erreur = 1 ;
 	

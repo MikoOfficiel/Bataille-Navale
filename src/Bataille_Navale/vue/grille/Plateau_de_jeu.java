@@ -1,4 +1,5 @@
-package Bataille_Navale.vue;
+package Bataille_Navale.vue.grille;
+
 
 import java.awt.*;
 import javax.swing.*;
@@ -12,10 +13,12 @@ public class Plateau_de_jeu extends JFrame {
 
 	JButton Bouton;
 	JLabel lbl;
+	private int ligne;
+	private int colonne;
 
 	//Constructeur 
 
-	public Plateau_de_jeu() {
+	public Plateau_de_jeu(int ligne, int colonne) {
 
 		setTitle("Bataille navale");
 		setSize(1200,1200);
@@ -40,7 +43,7 @@ public class Plateau_de_jeu extends JFrame {
 
 		//Grille
 
-		Grille gr = new Grille ();
+		Grille gr = new Grille (ligne, colonne);
 		gr.setBounds(50,30,451,451);
 		contentPane.add(gr);
 
