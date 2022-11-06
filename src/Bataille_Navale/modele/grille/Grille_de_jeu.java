@@ -8,7 +8,7 @@ import javax.swing.*;
 //import Bataille_Navale.modele.bateau.Bateau;
 
 public class Grille_de_jeu {
-	//Création graphique
+	//Crï¿½ation graphique
 	JFrame Frame;
 
 	//Attributs 
@@ -22,7 +22,7 @@ public class Grille_de_jeu {
 	private int nbTouches ;
 	private Grille_de_jeu [] partiesTouches;
 
-	//Création graphique
+	//Crï¿½ation graphique
 	//JFrame Frame;
 
 	//Constructeur
@@ -74,7 +74,7 @@ public class Grille_de_jeu {
 
 	//Methodes TESTS
 
-	//ICI Methode permettant de selectionner les coordonnees de la case que l'on veut viser à compléter
+	//ICI Methode permettant de selectionner les coordonnees de la case que l'on veut viser ï¿½ complï¿½ter
 
 	public int coordonneesSelection() {
 
@@ -85,7 +85,7 @@ public class Grille_de_jeu {
 
 
 
-	// Vérification si les coordonnées se retrouve sur l'une des cases d'un bateau adverse 
+	// Vï¿½rification si les coordonnï¿½es se retrouve sur l'une des cases d'un bateau adverse 
 	public boolean comparaisonCoordonnees(Grille_de_jeu g) {
 
 		if( g.getColonnes()>= debut_bateau.getColonnes() && g.getColonnes()<= fin_bateau.getColonnes()) {
@@ -102,7 +102,7 @@ public class Grille_de_jeu {
 	//Bateau vertical si ligne de debut = ligne de fin
 	//Bateau horizontal si colonnes de debut = colonnes de fin 
 
-	//recherche pour voir si le bateau a été touché 
+	//recherche pour voir si le bateau a ï¿½tï¿½ touchï¿½ 
 	public boolean Touche(Grille_de_jeu g) {
 		for(int i = 0; i< partiesTouches.length;i++) {
 			if(partiesTouches[i].equals(g)) {
