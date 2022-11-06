@@ -128,15 +128,5 @@ public class Grille_de_jeu {
 		Frame.setBackground(Color.black);
 		Frame.setVisible(true);
 		Frame.setFocusable(true);
-
-		//Test
-
-		//lblCouleur.setFont(new Font(Font.SANS_SERIF, Font, Font.BOLD, 18));
-		//add(lblCouleur);
-		/*JLabel lblCouleurV = new JLabel("noir");
-		lblCouleurV.setBounds(675,50,200,25);
-		lblCouleurV.setFont(new Font(Font.SANS_SERIF, Font.PLAIN,14));
-		add(lblCouleurV);
-	*/
 		}
 }

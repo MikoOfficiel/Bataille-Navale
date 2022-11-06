@@ -1,4 +1,4 @@
-package Bataille_Navale.modele.grille;
+package Bataille_Navale.vue;
 
 import java.awt.*;
 import javax.swing.*;
@@ -98,10 +98,4 @@ public class Plateau_de_jeu extends JFrame {
 
 	}
 
-
-
-	public static void main(String[] args) {
-
-		new Plateau_de_jeu();
-	}
 }
