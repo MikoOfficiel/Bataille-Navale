@@ -39,7 +39,7 @@ public class Menu_de_Jeu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Chargée une partie");
+        jButton1.setText("Charger une partie");
 
         jButton3.setText("Help");
 
