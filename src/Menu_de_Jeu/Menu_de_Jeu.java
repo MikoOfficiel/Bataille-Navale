@@ -44,7 +44,7 @@ public class Menu_de_Jeu extends javax.swing.JFrame {
         jButton3.setText("Help");
 
         jButton4.setText("Quitter");
-
+        
         jTextPane1.setBackground(new java.awt.Color(0, 153, 204));
         jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
