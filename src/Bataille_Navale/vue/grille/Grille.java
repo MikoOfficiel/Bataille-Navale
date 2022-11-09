@@ -31,8 +31,6 @@ public class Grille extends JComponent {
 
 	}
 
-
-
 	protected void paintComponent(Graphics g) {
 		
 
