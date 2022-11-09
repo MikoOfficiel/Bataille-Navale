@@ -20,8 +20,8 @@ public class Menu_de_Jeu extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -32,19 +32,19 @@ public class Menu_de_Jeu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setForeground(new java.awt.Color(0, 153, 204));
 
-        jButton2.setText("Lancer une partie");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Lancer une partie");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Chargée une partie");
+        jButton2.setText("Charger une partie");
 
         jButton3.setText("Help");
 
         jButton4.setText("Quitter");
-
+        
         jTextPane1.setBackground(new java.awt.Color(0, 153, 204));
         jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
@@ -99,7 +99,7 @@ public class Menu_de_Jeu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     }                                        
 
