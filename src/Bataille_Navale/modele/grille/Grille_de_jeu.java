@@ -68,6 +68,10 @@ public class Grille_de_jeu {
 		initialiserLaFenetre();
 
 	}
+	
+	//Methode pour ajouter bateau sur grille
+	
+	
 
 
 

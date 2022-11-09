@@ -1,4 +1,5 @@
 package Bataille_Navale.modele.bateau;
+import Bataille_Navale.modele.grille.*;
 
 
 public abstract class Bateau {
@@ -17,20 +18,49 @@ public abstract class Bateau {
 		this.coordY = y;
 	}
 	
+	
+	
 	// Methode permettant de placer bateau sur grille
 	
-	public String [][] placer_bateau(String [][] grille, int t, int x, int y, int orientation){
+	public int getTaille() {
+		return taille;
+	}
+
+
+
+	public int getPuisanceTir() {
+		return puisanceTir;
+	}
+
+
+
+	public int getCoordX() {
+		return coordX;
+	}
+
+
+
+	public int getCoordY() {
+		return coordY;
+	}
+
+
+
+	public Grille_de_jeu placer_bateau( int ligne, int colonne , int t, int x, int y, int orientation){
 	int erreur = 0 ;
 	int i = 0 ;
 	this.taille = t;
 	this.coordX = x;
 	this.coordY = y;
+	
+	Grille_de_jeu grille = new Grille_de_jeu(ligne,colonne);
+
 
 	switch (orientation){
 			case 1 :{
 					for(int j = y ; j < y + t ; j++){ //colonne
 						
-						grille[x][j] = "\04" ;	
+						= "\04" ;	
 						
 						}
 					}
@@ -40,7 +70,7 @@ public abstract class Bateau {
 					
 					for(int j = x ; j < x + t ; j++){ //ligne
 						
-						grille[j][y] = "\04" ;	
+						grille(j,y) = "\04" ;	
 						
 						}
 					}
