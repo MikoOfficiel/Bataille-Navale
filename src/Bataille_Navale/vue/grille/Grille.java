@@ -1,4 +1,6 @@
 package Bataille_Navale.vue.grille;
+import Bataille_Navale.modele.bateau.Bateau;
+import Bataille_Navale.modele.bateau.Cuirase;
 import  Bataille_Navale.modele.grille.*;
 
 import java.awt.Color;
@@ -16,18 +18,14 @@ public class Grille extends JComponent {
 	//Constructeur
 	private int line;
 	private int column;
+	int dimensionCase ;
 
 	public Grille(int ligne , int colonne){
 
 		
-		Grille_de_jeu G = new Grille_de_jeu (ligne, colonne);
-		
-		ligne = G.getLigne();
-		colonne= G.getColonnes();
-		
 		this.line = ligne;
 		this.column = colonne;
-
+		this.dimensionCase=28;
 
 	}
 
@@ -35,41 +33,71 @@ public class Grille extends JComponent {
 
 	protected void paintComponent(Graphics g) {
 		
-
+		Bateau croisiere = new Cuirase(5,5);
+		
+		
 		Graphics2D g2 = (Graphics2D) g;
 
 		//Les cases
-		int CASE_DIM =28;// 450 / 15 
 		for(int i = 0; i<line;i++) {
 
 			for(int j=0; j<column;j++) {
-				g2.setPaint(Color.WHITE);
-				g2.fill(new Rectangle2D.Double((j+1)*CASE_DIM, (i+1)*CASE_DIM, CASE_DIM, CASE_DIM));
+				g2.setPaint(Color.LIGHT_GRAY);
+				g2.fill(new Rectangle2D.Double((j+1)*dimensionCase, (i+1)*dimensionCase, dimensionCase, dimensionCase));
 				g2.setPaint(Color.BLACK);
-				g2.drawLine((j+1)*CASE_DIM, CASE_DIM, (j+1)*CASE_DIM,(CASE_DIM + 450));
-				g2.drawLine(CASE_DIM, (i+1)*CASE_DIM, (CASE_DIM + 450), (i+1)*CASE_DIM);
+				g2.drawLine((j+1)*dimensionCase, dimensionCase, (j+1)*dimensionCase,(dimensionCase + 450));
+				g2.drawLine(dimensionCase, (i+1)*dimensionCase, (dimensionCase + 450), (i+1)*dimensionCase);
 
 			}
-
+			
+			this.placerBateau(croisiere, g2);
 		}
 //Contour de la grille
 		g2.setPaint(Color.BLACK);
-		g2.draw(new Rectangle2D.Double(CASE_DIM,CASE_DIM, line*CASE_DIM, column*CASE_DIM));
+		g2.draw(new Rectangle2D.Double(dimensionCase,dimensionCase, line*dimensionCase, column*dimensionCase));
 		
 		// Coordonn�es sur le contour de la grille
 				int c;
 				
 				for(int i =0;i<line;i++) {
 					c = i+1; 
-					g2.drawString(c+" ", 2.0f / 3 * CASE_DIM, (i+1.5f)*CASE_DIM + 6);
+					g2.drawString(c+" ", 2.0f / 3 * dimensionCase, (i+1.5f)*dimensionCase + 6);
 					
 				}
 				for(int j =0; j<column;j++) {
 					c = 'A' + j; //Code ASCII
-					g2.drawString("" + (char)c, (j + 1.5f) * CASE_DIM - 5,2.0f/3* CASE_DIM + 6);
+					g2.drawString("" + (char)c, (j + 1.5f) * dimensionCase - 5,2.0f/3* dimensionCase + 6);
 				}
 				
 
 		g2.dispose();
 	}
+	
+	public void placerBateau(Bateau b, Graphics2D graph) {
+		
+		
+		if(b.orientationBateau()==true) {
+			for(int i = 0; i<=b.getTaille();i++) {
+				graph.setPaint(Color.BLUE);
+				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
+			}
+		}else {
+				for(int i = 0; i<=b.getTaille();i++) {
+				graph.setPaint(Color.pink);
+				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
+				}
+			}
+		}
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
