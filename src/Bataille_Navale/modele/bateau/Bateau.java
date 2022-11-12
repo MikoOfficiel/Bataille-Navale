@@ -18,6 +18,15 @@ public abstract class Bateau {
 		this.coordY = y;
 	}
 	
+	public Bateau(int t, int puissance) {
+		this.taille = t;
+		this.puisanceTir = puissance;
+		this.coordX = (int)((Math.random()*10)+ (Math.random()*10)/2);
+		this.coordY =(int)((Math.random()*10)+ (Math.random()*10)/2);
+	}
+	
+
+	
 	public int getTaille() {
 		return taille;
 	}
