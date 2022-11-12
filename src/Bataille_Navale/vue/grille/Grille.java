@@ -1,15 +1,16 @@
 package Bataille_Navale.vue.grille;
 import Bataille_Navale.modele.bateau.Bateau;
-<<<<<<< HEAD
+import Bataille_Navale.modele.bateau.Croiseur;
 import Bataille_Navale.modele.bateau.Cuirase;
-=======
->>>>>>> ff3c04b6ad59179e7f0425f02c9b783780eed58e
+import Bataille_Navale.modele.bateau.Destroyeur;
+import Bataille_Navale.modele.bateau.SousMarin;
 import  Bataille_Navale.modele.grille.*;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.*;
+import java.util.ArrayList;
 
 import javax.swing.JComponent;
 public class Grille extends JComponent {
@@ -21,8 +22,8 @@ public class Grille extends JComponent {
 	//Constructeur
 	private int line;
 	private int column;
-<<<<<<< HEAD
 	int dimensionCase ;
+	private ArrayList <Bateau> lesBateaux ;
 
 	public Grille(int ligne , int colonne){
 
@@ -30,40 +31,38 @@ public class Grille extends JComponent {
 		this.line = ligne;
 		this.column = colonne;
 		this.dimensionCase=28;
-=======
-	private int dimensionCase;// 450 / 15
-	//private Graphics g;
-
-	public Grille(int ligne , int colonne){
-
-		this.line = ligne;
-		this.column = colonne;
-		this.dimensionCase = 28;
-
->>>>>>> ff3c04b6ad59179e7f0425f02c9b783780eed58e
 
 	}
 
+
+
 	protected void paintComponent(Graphics g) {
 		
-		Bateau croisiere = new Cuirase(5,5);
+		//Bateau croisiere = new Cuirase(5,5);
+		
+		Bateau ab = new Cuirase((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
+		Bateau bb= new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
+		Bateau cb = new Destroyeur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
+		Bateau db = new Croiseur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
+		Bateau eb = new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
+		
+		
+		ArrayList <Bateau> X = new ArrayList <Bateau>();
+		X.add(ab);
+		X.add(bb);
+		X.add(cb);
+		X.add(db);
+		X.add(eb);
+		
 		
 		
 		Graphics2D g2 = (Graphics2D) g;
 
-<<<<<<< HEAD
 		//Les cases
 		for(int i = 0; i<line;i++) {
 
 			for(int j=0; j<column;j++) {
 				g2.setPaint(Color.LIGHT_GRAY);
-=======
-		//Les cases 
-		for(int i = 0; i<line;i++) { //i -> ligne
-
-			for(int j=0; j<column;j++) { //j -> colonne
-				g2.setPaint(Color.lightGray);
->>>>>>> ff3c04b6ad59179e7f0425f02c9b783780eed58e
 				g2.fill(new Rectangle2D.Double((j+1)*dimensionCase, (i+1)*dimensionCase, dimensionCase, dimensionCase));
 				g2.setPaint(Color.BLACK);
 				g2.drawLine((j+1)*dimensionCase, dimensionCase, (j+1)*dimensionCase,(dimensionCase + 450));
@@ -71,24 +70,8 @@ public class Grille extends JComponent {
 
 			}
 			
-<<<<<<< HEAD
-			this.placerBateau(croisiere, g2);
-=======
-			for(int w = 0; w<4+1;w++) { //i -> ligne
-
-				//for(int z=0; z<1+1;z++) { //j -> colonne
-			g2.setPaint(Color.cyan);
-			g2.fill(new Rectangle2D.Double(dimensionCase*5, dimensionCase*8 , dimensionCase*w, dimensionCase)); // (x,y,case_di
-				}
-			
-			for(int w = 0; w<7+1;w++) { //i -> ligne
-
-				for(int z=0; z<1+1;z++) { //j -> colonne
-			g2.setPaint(Color.pink);
-			g2.fill(new Rectangle2D.Double(dimensionCase*12, dimensionCase*6 , dimensionCase*z, dimensionCase*w)); // (x,y,case_di
-				}}
-
->>>>>>> ff3c04b6ad59179e7f0425f02c9b783780eed58e
+			//this.placerUnBateau(croisiere, g2);
+			this.placerBateaux(X, g2);
 		}
 //Contour de la grille
 		g2.setPaint(Color.BLACK);
@@ -111,8 +94,7 @@ public class Grille extends JComponent {
 		g2.dispose();
 	}
 	
-<<<<<<< HEAD
-	public void placerBateau(Bateau b, Graphics2D graph) {
+	public void placerUnBateau(Bateau b, Graphics2D graph) {
 		
 		
 		if(b.orientationBateau()==true) {
@@ -127,31 +109,34 @@ public class Grille extends JComponent {
 				}
 			}
 		}
-}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-=======
-	public void placerBateau(Bateau b, Graphics2D graph ) {
+	public void placerBateaux(ArrayList <Bateau> bateaux, Graphics2D graph) {
 		
-		for(int i = 0; i<b.getTaille();i++) { //i -> ligne
-				
-				graph.setPaint(Color.pink);
-				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY() , dimensionCase*b.getTaille(), dimensionCase)); 
-				
+		for(Bateau b : bateaux ) {
+		
+		if(b.orientationBateau()==true) {
+			for(int i = 0; i<=b.getTaille();i++) {
+				graph.setPaint(Color.BLUE);
+				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
 			}
-		
+		}else {
+				for(int i = 0; i<=b.getTaille();i++) {
+				graph.setPaint(Color.pink);
+				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
+				}
+			}
+		}
 	}
-	
-	
 }
->>>>>>> ff3c04b6ad59179e7f0425f02c9b783780eed58e
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
