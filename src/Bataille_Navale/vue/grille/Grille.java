@@ -11,10 +11,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.*;
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
+
 import java.util.Collections;
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 
 import javax.swing.JComponent;
 public class Grille extends JComponent {
@@ -31,7 +29,7 @@ public class Grille extends JComponent {
 
 	public Grille(int ligne , int colonne){
 
-		
+
 		this.line = ligne;
 		this.column = colonne;
 		this.dimensionCase=28;
@@ -41,37 +39,32 @@ public class Grille extends JComponent {
 
 
 	protected void paintComponent(Graphics g) {
-		
+
 		//Bateau croisiere = new Cuirase(5,5);
-		
-<<<<<<< HEAD
+
 		Bateau ab = new Cuirase((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau bb= new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau cb = new Destroyeur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau db = new Croiseur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau eb = new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
-=======
-		Bateau ab = new Cuirase();
-		Bateau bb= new SousMarin();
-		Bateau cb = new Destroyeur();
-		Bateau db = new Croiseur();
-		Bateau eb = new SousMarin();
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
-		
-		
+	//	Bateau ab = new Cuirase();
+	//	Bateau bb= new SousMarin();
+	//	Bateau cb = new Destroyeur();
+	//	Bateau db = new Croiseur();
+	//	Bateau eb = new SousMarin();
+
+
 		ArrayList <Bateau> X = new ArrayList <Bateau>();
 		X.add(ab);
 		X.add(bb);
 		X.add(cb);
 		X.add(db);
 		X.add(eb);
-<<<<<<< HEAD
-=======
+
 		Collections.shuffle(X);
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
-		
-		
-		
+
+
+
 		Graphics2D g2 = (Graphics2D) g;
 
 		//Les cases
@@ -85,104 +78,97 @@ public class Grille extends JComponent {
 				g2.drawLine(dimensionCase, (i+1)*dimensionCase, (dimensionCase + 450), (i+1)*dimensionCase);
 
 			}
-			
+
 			//this.placerUnBateau(croisiere, g2);
-<<<<<<< HEAD
+
 			this.placerBateaux(X, g2);
-=======
+
 			this.placerBateaux2(X, g2);
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 		}
-//Contour de la grille
+		//Contour de la grille
 		g2.setPaint(Color.BLACK);
 		g2.draw(new Rectangle2D.Double(dimensionCase,dimensionCase, line*dimensionCase, column*dimensionCase));
-		
+
 		// Coordonn�es sur le contour de la grille
-				int c;
-				
-				for(int i =0;i<line;i++) {
-					c = i+1; 
-					g2.drawString(c+" ", 2.0f / 3 * dimensionCase, (i+1.5f)*dimensionCase + 6);
-					
-				}
-				for(int j =0; j<column;j++) {
-					c = 'A' + j; //Code ASCII
-					g2.drawString("" + (char)c, (j + 1.5f) * dimensionCase - 5,2.0f/3* dimensionCase + 6);
-				}
-				
+		int c;
+
+		for(int i =0;i<line;i++) {
+			c = i+1; 
+			g2.drawString(c+" ", 2.0f / 3 * dimensionCase, (i+1.5f)*dimensionCase + 6);
+
+		}
+		for(int j =0; j<column;j++) {
+			c = 'A' + j; //Code ASCII
+			g2.drawString("" + (char)c, (j + 1.5f) * dimensionCase - 5,2.0f/3* dimensionCase + 6);
+		}
+
 
 		g2.dispose();
 	}
-	
+
 	public void placerUnBateau(Bateau b, Graphics2D graph) {
-		
-		
+
+
 		if(b.orientationBateau()==true) {
 			for(int i = 0; i<=b.getTaille();i++) {
 				graph.setPaint(Color.BLUE);
 				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
 			}
 		}else {
-				for(int i = 0; i<=b.getTaille();i++) {
+			for(int i = 0; i<=b.getTaille();i++) {
 				graph.setPaint(Color.pink);
 				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
-				}
 			}
 		}
-	
+	}
+
 	public void placerBateaux(ArrayList <Bateau> bateaux, Graphics2D graph) {
-		
+
 		for(Bateau b : bateaux ) {
-		
-		if(b.orientationBateau()==true) {
-			for(int i = 0; i<=b.getTaille();i++) {
-				graph.setPaint(Color.BLUE);
-				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
-			}
-		}else {
+
+			if(b.orientationBateau()==true) {
 				for(int i = 0; i<=b.getTaille();i++) {
-				graph.setPaint(Color.pink);
-				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
+					graph.setPaint(Color.BLUE);
+					graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
+				}
+			}else {
+				for(int i = 0; i<=b.getTaille();i++) {
+					graph.setPaint(Color.pink);
+					graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
 				}
 			}
 		}
 	}
-}
-	
+
+
 	public void placerBateaux2(ArrayList <Bateau> bateaux, Graphics2D graph) {
-		
+
 		int c = 0;
-		
+
 		for(Bateau b : bateaux ) {
-		
+
 			c++;
-			
-		if(c%2==0) {
-			for(int i = 0; i<=b.getTaille();i++) {
-				graph.setPaint(Color.blue);
-				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
-			}
-		}else {
+
+			if(c%2==0) {
 				for(int i = 0; i<=b.getTaille();i++) {
-				graph.setPaint(Color.BLUE);
-				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
+					graph.setPaint(Color.blue);
+					graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
+				}
+			}else {
+				for(int i = 0; i<=b.getTaille();i++) {
+					graph.setPaint(Color.BLUE);
+					graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
 				}
 			}
 		}
 	}
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<<<<<<< HEAD
-=======
-	
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
-	
+
+
+
+
+
+
+
+
+

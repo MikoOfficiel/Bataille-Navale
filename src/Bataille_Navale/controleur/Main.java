@@ -40,11 +40,9 @@ public class Main {
 		if(tir_CoordX == co_batX && tir_CoordY == co_batY) {
 			System.out.println("Toucher un bateau!!!");
 
-<<<<<<< HEAD
-=======
 			new Plateau_de_jeu(15,15);
 			new Plateau_de_jeu(15,15);//mettre 15, 15 car dans Grille.java CASE_DIM = 28
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
+
 		}
 		else {
 			System.out.println("Pas touché de cases adverses.");

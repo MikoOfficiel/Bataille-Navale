@@ -18,8 +18,7 @@ public abstract class Bateau {
 		this.coordY = y;
 	}
 	
-<<<<<<< HEAD
-=======
+
 	public Bateau(int t, int puissance) {
 		this.taille = t;
 		this.puisanceTir = puissance;
@@ -28,8 +27,7 @@ public abstract class Bateau {
 	}
 	
 
-	
->>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
+
 	public int getTaille() {
 		return taille;
 	}
