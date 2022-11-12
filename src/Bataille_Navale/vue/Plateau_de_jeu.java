@@ -1,14 +1,16 @@
-package Bataille_Navale.vue.grille;
+package Bataille_Navale.vue;
 
 
 import java.awt.*;
 import javax.swing.*;
+
+import Bataille_Navale.vue.grille.Grille;
 public class Plateau_de_jeu extends JFrame {
 
 	/**
 	 * 
 	 */
-	//Cr�ation d'un s�rial ID( recommand� par Eclipse)
+	//Cr�ation d'un s�rial ID( recommand� par Eclipse je sais pas pk)
 	private static final long serialVersionUID = 1L;
 
 	JButton Bouton;
