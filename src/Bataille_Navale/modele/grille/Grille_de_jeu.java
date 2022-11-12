@@ -129,7 +129,7 @@ public class Grille_de_jeu {
 
 		Frame = new JFrame("BATAILLE NAVALE");
 		Frame.setSize(800, 600);
-		Frame.setBackground(Color.black);
+		Frame.setBackground(Color.ORANGE);
 		Frame.setVisible(true);
 		Frame.setFocusable(true);
 		}

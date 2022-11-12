@@ -8,5 +8,7 @@ public class Croiseur extends Bateau {
 	}
 	
 	
-
+	public Croiseur() {
+		super(5, 4, (int)((Math.random()*10)+ (Math.random()*10)/2), (int)((Math.random()*10)+ (Math.random()*10)/2));
+	}
 }

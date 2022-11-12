@@ -6,5 +6,10 @@ public class SousMarin extends Bateau {
 		super(1,1, x, y);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public SousMarin() {
+		super(1, 1, (int)((Math.random()*10)+ (Math.random()*10)/2), (int)((Math.random()*10)+ (Math.random()*10)/2));
+
+	}
 
 }

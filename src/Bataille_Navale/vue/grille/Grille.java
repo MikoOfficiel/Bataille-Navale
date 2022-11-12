@@ -11,6 +11,10 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.*;
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
+import java.util.Collections;
+>>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 
 import javax.swing.JComponent;
 public class Grille extends JComponent {
@@ -40,11 +44,19 @@ public class Grille extends JComponent {
 		
 		//Bateau croisiere = new Cuirase(5,5);
 		
+<<<<<<< HEAD
 		Bateau ab = new Cuirase((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau bb= new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau cb = new Destroyeur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau db = new Croiseur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
 		Bateau eb = new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
+=======
+		Bateau ab = new Cuirase();
+		Bateau bb= new SousMarin();
+		Bateau cb = new Destroyeur();
+		Bateau db = new Croiseur();
+		Bateau eb = new SousMarin();
+>>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 		
 		
 		ArrayList <Bateau> X = new ArrayList <Bateau>();
@@ -53,6 +65,10 @@ public class Grille extends JComponent {
 		X.add(cb);
 		X.add(db);
 		X.add(eb);
+<<<<<<< HEAD
+=======
+		Collections.shuffle(X);
+>>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 		
 		
 		
@@ -71,7 +87,11 @@ public class Grille extends JComponent {
 			}
 			
 			//this.placerUnBateau(croisiere, g2);
+<<<<<<< HEAD
 			this.placerBateaux(X, g2);
+=======
+			this.placerBateaux2(X, g2);
+>>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 		}
 //Contour de la grille
 		g2.setPaint(Color.BLACK);
@@ -129,6 +149,28 @@ public class Grille extends JComponent {
 	}
 }
 	
+	public void placerBateaux2(ArrayList <Bateau> bateaux, Graphics2D graph) {
+		
+		int c = 0;
+		
+		for(Bateau b : bateaux ) {
+		
+			c++;
+			
+		if(c%2==0) {
+			for(int i = 0; i<=b.getTaille();i++) {
+				graph.setPaint(Color.blue);
+				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
+			}
+		}else {
+				for(int i = 0; i<=b.getTaille();i++) {
+				graph.setPaint(Color.BLUE);
+				graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase*i));
+				}
+			}
+		}
+	}
+}
 	
 	
 	
@@ -139,4 +181,8 @@ public class Grille extends JComponent {
 	
 	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 54ac23621181a1095abaf6a2fc455528ada784d9
 	
