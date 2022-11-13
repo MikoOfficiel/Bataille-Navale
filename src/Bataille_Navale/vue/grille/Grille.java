@@ -42,16 +42,11 @@ public class Grille extends JComponent {
 
 		//Bateau croisiere = new Cuirase(5,5);
 
-		Bateau ab = new Cuirase((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
-		Bateau bb= new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
-		Bateau cb = new Destroyeur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
-		Bateau db = new Croiseur((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
-		Bateau eb = new SousMarin((int)(Math.random()*10+(((int)(Math.random()*10))/2)),(int)(Math.random()*10+(((int)(Math.random()*10))/2)));
-	//	Bateau ab = new Cuirase();
-	//	Bateau bb= new SousMarin();
-	//	Bateau cb = new Destroyeur();
-	//	Bateau db = new Croiseur();
-	//	Bateau eb = new SousMarin();
+		Bateau ab = new Cuirase();
+		Bateau bb= new SousMarin();
+		Bateau cb = new Destroyeur();
+		Bateau db = new Croiseur();
+		Bateau eb = new SousMarin();
 
 
 		ArrayList <Bateau> X = new ArrayList <Bateau>();
@@ -81,9 +76,8 @@ public class Grille extends JComponent {
 
 			//this.placerUnBateau(croisiere, g2);
 
-			this.placerBateaux(X, g2);
-
 			this.placerBateaux2(X, g2);
+
 		}
 		//Contour de la grille
 		g2.setPaint(Color.BLACK);

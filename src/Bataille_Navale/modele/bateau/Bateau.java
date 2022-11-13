@@ -6,24 +6,24 @@ public abstract class Bateau {
 
 	private int taille ;
 	private int puisanceTir ;
-	private int coordX ;
-	private int coordY ;
+	private Coordonnees position ;
+	
+	
 
 
 
-	public Bateau(int t, int puissance, int x, int y) {
-		this.taille = t;
-		this.puisanceTir = puissance;
-		this.coordX = x;
-		this.coordY = y;
+	public Bateau(int taille, int puisanceTir, Coordonnees position) {
+		this.taille = taille;
+		this.puisanceTir = puisanceTir;
+		this.position = position;
 	}
 	
 
 	public Bateau(int t, int puissance) {
 		this.taille = t;
 		this.puisanceTir = puissance;
-		this.coordX = (int)((Math.random()*10)+ (Math.random()*10)/2);
-		this.coordY =(int)((Math.random()*10)+ (Math.random()*10)/2);
+		this.position.setX((int)((Math.random()*10)+ (Math.random()*10)/2));
+		this.position.setY((int)((Math.random()*10)+ (Math.random()*10)/2));
 	}
 	
 
@@ -41,13 +41,13 @@ public abstract class Bateau {
 
 
 	public int getCoordX() {
-		return coordX;
+		return position.getX();
 	}
 
 
 
 	public int getCoordY() {
-		return coordY;
+		return position.getY();
 	}
 	
 	public boolean orientationBateau() {
