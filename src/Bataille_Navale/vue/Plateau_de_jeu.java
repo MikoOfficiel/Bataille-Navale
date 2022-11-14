@@ -58,7 +58,7 @@ public class Plateau_de_jeu extends JFrame {
 		add(bat);
 		
 
-			//Liste d�roulante avec tous les bateaux
+		//Liste d�roulante avec tous les bateaux
 		String[] bateaux = {"Croiseur","Cuirase","Destroyeur","SousMarin"};
 		JComboBox<String> b = new JComboBox<>(bateaux);
 		b.setBounds(830,50,100,30);
