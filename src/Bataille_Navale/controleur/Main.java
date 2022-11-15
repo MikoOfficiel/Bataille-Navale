@@ -18,7 +18,6 @@ public class Main {
 		new Plateau_de_jeu(15,15); //mettre 15, 15 car dans Grille.java CASE_DIM = 28
 
 	}
-
 	
 }
 
