@@ -1,16 +1,16 @@
-
-//Ne sert plus a rien car le fichier de lancement est Menu_de_Jeu.java
-
-/*Si des trucs sont a rajouter, les mettres dans le fichier Menu_de_Jeu dans 
-"private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {" */   
-
 package Bataille_Navale.controleur;
 
+import java.awt.Graphics2D;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 import Bataille_Navale.modele.bateau.Bateau;
 import Bataille_Navale.modele.bateau.Coordonnees;
 import Bataille_Navale.modele.bateau.Croiseur;
+import Bataille_Navale.modele.bateau.Cuirase;
+import Bataille_Navale.modele.bateau.Destroyeur;
+import Bataille_Navale.modele.bateau.SousMarin;
 import Bataille_Navale.modele.grille.Grille_de_jeu;
 import Bataille_Navale.modele.grille.Grille_de_jeu_joueur;
 import Bataille_Navale.modele.grille.Grille_de_jeu_ordinateur;
@@ -22,8 +22,11 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		new Plateau_de_jeu(15,15); //mettre 15, 15 car dans Grille.java CASE_DIM = 28
+		//new Plateau_de_jeu(15,15);
 
 	}
+	
+
 	
 }
 

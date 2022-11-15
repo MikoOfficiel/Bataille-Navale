@@ -25,7 +25,8 @@ public class Grille extends JComponent {
 	private int line;
 	private int column;
 	int dimensionCase ;
-	private ArrayList <Bateau> lesBateaux ;
+	public ArrayList <Bateau> lesBateaux ;
+	public Graphics2D g2;
 
 	public Grille(int ligne , int colonne){
 
@@ -57,10 +58,12 @@ public class Grille extends JComponent {
 		X.add(eb);
 
 		Collections.shuffle(X);
+		
+		lesBateaux = X;
 
 
 
-		Graphics2D g2 = (Graphics2D) g;
+		g2 = (Graphics2D) g;
 
 		//Les cases
 		for(int i = 0; i<line;i++) {
@@ -76,7 +79,7 @@ public class Grille extends JComponent {
 
 			//this.placerUnBateau(croisiere, g2);
 
-			this.placerBateaux2(X, g2);
+			this.placerBateaux2(lesBateaux, g2);
 
 		}
 		//Contour de la grille
@@ -155,6 +158,35 @@ public class Grille extends JComponent {
 				}
 			}
 		}
+	}
+	
+	
+	public void deplacerBateauG(Bateau b, Graphics2D graph) {
+
+
+		for(int i = 0; i<=b.getTaille();i++) {
+			graph.setPaint(Color.yellow);
+			graph.fill(new Rectangle2D.Double(dimensionCase*(b.getCoordX()+1), dimensionCase*b.getCoordY(), dimensionCase*i, dimensionCase));
+			// à modifier pour gauche
+		}
+		
+		graph.setPaint(Color.LIGHT_GRAY);
+		graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase));
+
+	}
+
+	public void deplacerBateauD(Bateau b, Graphics2D graph) {
+
+
+	for(int i = 0; i<=b.getTaille();i++) {
+		graph.setPaint(Color.yellow);
+		graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase*i+1, dimensionCase));
+		
+	}
+	
+	graph.setPaint(Color.LIGHT_GRAY);
+	graph.fill(new Rectangle2D.Double(dimensionCase*b.getCoordX(), dimensionCase*b.getCoordY(), dimensionCase, dimensionCase));
+	
 	}
 }
 
