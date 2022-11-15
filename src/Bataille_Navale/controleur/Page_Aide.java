@@ -1,4 +1,4 @@
-package Menu_de_Jeu;
+package Bataille_Navale.controleur;
 
 /**
  *

@@ -1,6 +1,6 @@
-package Menu_de_Jeu;
+package Bataille_Navale.controleur;
 
-import Bataille_Navale.controleur.Main;
+import Bataille_Navale.vue.grille.Plateau_de_jeu;
 
 /**
  *
@@ -123,7 +123,8 @@ public class Menu_de_Jeu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:   
     	this.dispose();
-    }                                        
+    	new Plateau_de_jeu(15,15);
+    }    	
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
