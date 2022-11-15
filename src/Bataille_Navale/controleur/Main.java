@@ -1,3 +1,9 @@
+
+//Ne sert plus a rien car le fichier de lancement est Menu_de_Jeu.java
+
+/*Si des trucs sont a rajouter, les mettres dans le fichier Menu_de_Jeu dans 
+"private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {" */   
+
 package Bataille_Navale.controleur;
 
 import java.util.Scanner;
